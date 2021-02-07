@@ -1,13 +1,46 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  color: #353535;
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  height: 100%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Roboto', sans-serif, Monaco;
 }
+
+.btn-ecopetrol-primary {
+
+}
+
+.btn-eco-secundary {
+
+}
+
+.btn.btn-eco-generic {
+
+}
+
+.title-eco {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.subtitle-eco {
+  font-size: 17px;
+}
+
+.normal-eco-text {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.small-eco-text {
+  font-size: 13px;
+  font-weight: normal;
+}
+
