@@ -136,6 +136,9 @@ function FormScreen(props) {
                                                    label={element.label}
                                                    required={element.required}
                                                    name={element.name} id={element.name + index}
+                                                   inputProps={{
+                                                       maxLength: 50,
+                                                   }}
                                                    aria-describedby={element.name + "helper-text" + index}/>
                                         <FormHelperText id={element.name + "helper-text" + index}>
                                             {element.info}

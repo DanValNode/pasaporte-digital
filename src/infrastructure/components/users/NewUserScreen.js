@@ -46,9 +46,9 @@ const NewUserScreen = () => {
         { value: 'NA',label: 'Otro' },
     ]
     const entity = [
-        { label:'Nombre', name: 'name', type: 'text', required: true, validator: ['letter'], size: {lg: 6} },
-        { label:'Apellido', name: 'lastname', type: 'text', required: true, validator: ['letter'], size: {lg: 6} },
-        { label:'Correo', name: 'email', type: 'email', required: true, validator: ['email'], info: 'Debe ser un correo valido' },
+        { label:'Nombre', name: 'name', type: 'text', required: true, validator: ['letter'], size: {md:12, lg: 4} },
+        { label:'Apellido', name: 'lastname', type: 'text', required: true, validator: ['letter'], size: {lg: 4} },
+        { label:'Correo', name: 'email', type: 'email', required: true, validator: ['email'], info: 'Debe ser un correo valido', size: {lg: 4} },
         { label:'Direccion', name: 'address', type: 'text', required: true, info: 'Dirección de residencia' },
         { label:'check', name: 'value', type: 'checkbox', required: true, info: 'Tienes algo' },
         { label:'sel', name: 'select', type: 'select', required: true, info: 'Seleccione moneda', values: currencies },
@@ -64,6 +64,7 @@ const NewUserScreen = () => {
     const handleSubmit = (event, state) => {
         event.preventDefault();
         alert("externo");
+        console.log(state);
     }
 
     return(
