@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { esES } from '@material-ui/core/locale';
+
+const theme = createMuiTheme({
+    palette: {
+        //primary: { main: '#1976d2' }, //aqui se puede configurar el color primario de toda la app
+    },
+}, esES);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <ThemeProvider theme={theme}>
+          <App />
+      </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -10,7 +10,7 @@ const Header = () => {
                 <img width={80} src={reactLogo} alt="react logo"/>
                 {intl.formatMessage({id: 'title'})}
             </h1>
-            <p>{intl.formatMessage({id: 'description'})}</p>
+
         </header>
     )
 }

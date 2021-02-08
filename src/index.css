@@ -17,8 +17,8 @@ code {
 
 }
 
-.btn-eco-secundary {
-
+.btn-eco-secondary {
+  margin-left: 1rem !important;
 }
 
 .btn.btn-eco-generic {
@@ -42,5 +42,13 @@ code {
 .small-eco-text {
   font-size: 13px;
   font-weight: normal;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.icon-title {
+  font-size: 25px;
 }
 
