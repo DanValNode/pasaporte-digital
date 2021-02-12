@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import "src/variables.scss";
 
-$sidebar-bg-color: #1d1d1d;
+$sidebar-bg-color: $color-primary-blue;
 $submenu-bg-color: rgba(255, 255, 255, 0.05);
 $submenu-bg-color-collapsed: rgba(29, 29, 29, 0.95);
-$sidebar-color: #adadad;
+$sidebar-color: #ffffff;
 $highlight-color: #d8d8d8;
 $icon-bg-color: rgba(255, 255, 255, 0.05);
-$icon-size: 35px;
+$icon-size: 40px;
 
 @import '~react-pro-sidebar/dist/scss/styles.scss';
 
@@ -177,4 +178,9 @@ $icon-size: 35px;
     color: #000000;
     background: #ffd331;
   }
+}
+
+.pro-sidebar > .pro-sidebar-inner {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 }

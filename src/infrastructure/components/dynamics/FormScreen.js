@@ -1,6 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import {
-    Button, Grid, InputLabel, TextField, FormHelperText, RadioGroup,
+    Button, Grid, TextField, FormHelperText, RadioGroup,
     FormControlLabel, Checkbox, MenuItem, Box, FormControl, FormLabel,
     Radio
 } from "@material-ui/core";
@@ -227,7 +227,7 @@ function FormScreen(props) {
                                             value={state[element.name]}
                                             onChange={(value) => handleChange({ target: { value, type:"time", name: element.name } })}
                                             KeyboardButtonProps={{
-                                                'aria-label': 'change time',
+                                                'aria-label': 'Cambiar Hora',
                                             }}
                                             required={element.required}
                                         />
@@ -241,7 +241,7 @@ function FormScreen(props) {
                                         <RadioGroup aria-label={element.label} name={element.name}
                                                     value={state[element.name]} onChange={handleChange} row>
                                             {
-                                                element !== null && element.values !== null &&
+                                                element.values !== null &&
                                                 element.values.map((x, index) => (
                                                     <FormControlLabel
                                                         key={index}
@@ -264,7 +264,7 @@ function FormScreen(props) {
                 <Grid container justify="flex-end">
                     <Box mt={4}>
                         <Button type="submit" variant="contained" color="primary">Guardar</Button>
-                        <Button type="button" className="btn-eco-secondary" variant="contained">Cancelar</Button>
+                        <Button type="button" className="ml-1" variant="contained">Cancelar</Button>
                     </Box>
                 </Grid>
             </form>

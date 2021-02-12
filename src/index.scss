@@ -1,0 +1,73 @@
+@import "variables";
+
+body {
+  margin: 0;
+  height: 100vh;
+  color: #353535;
+  font-family: 'Roboto', sans-serif;
+  background-color: $color-secondary-gray;
+}
+
+#root {
+  height: 100%;
+}
+
+
+.title {
+  font-size: $size-title;
+  color: $color-primary-blue;
+}
+
+.btn-eco-primary {
+
+}
+
+.btn-eco-secondary {
+  background-color: $color-secondary-gray;
+}
+
+.ml-1 {
+  margin-left: 1rem !important;
+}
+
+.ml-2 {
+  margin-left: 2.5rem !important;
+}
+
+.ml-3 {
+  margin-left: 3.5rem !important;
+}
+
+.ml-4 {
+  margin-left: 4.5rem !important;
+}
+
+.ml-5 {
+  margin-left: 5.5rem !important;
+}
+
+
+.mt-1 {
+  margin-top: 1rem !important;
+}
+
+.mt-2 {
+  margin-top: 2.5rem !important;
+}
+
+.mt-3 {
+  margin-top: 3.5rem !important;
+}
+
+.mt-4 {
+  margin-top: 4.5rem !important;
+}
+
+.mt-5 {
+  margin-top: 5.5rem !important;
+}
+
+.icon-title {
+  font-size: 25px;
+}
+

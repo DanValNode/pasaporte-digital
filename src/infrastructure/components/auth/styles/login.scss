@@ -1,0 +1,56 @@
+@import "src/variables.scss";
+
+.main-login {
+  height: 100vh;
+}
+
+.image {
+  background-color: #0E0C5A;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 41.666666%;
+    background-color: rgba(14, 12, 90, 0.63);
+    @media (max-width: 959px) {
+      left: 49.988888%;
+    }
+    @media (max-width: 599px) {
+      display: none;
+    }
+  }
+}
+
+.paper {
+  margin: 4px 2px 4px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  width: 80%;
+  align-items: flex-start;
+}
+
+.subtitle-login {
+  color: $color-text-gray;
+}
+
+.card-login {
+  width: 80%;
+  text-align: center;
+  min-height: 270px;
+}
+
+.bg-gray {
+  background-color: $color-secondary-gray !important;
+}
+
+.submit {
+}

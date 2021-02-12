@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
@@ -9,7 +9,7 @@ import { esES } from '@material-ui/core/locale';
 
 const theme = createMuiTheme({
     palette: {
-        //primary: { main: '#1976d2' }, //aqui se puede configurar el color primario de toda la app
+        primary: { main: '#2D3086' }, //aqui se puede configurar el color primario de toda la app
     },
 }, esES);
 
