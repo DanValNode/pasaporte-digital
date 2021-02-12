@@ -58,7 +58,7 @@ const NewUserScreen = () => {
         { label:'Genero', name: 'gender', type: 'radio', required: true, info: 'Hora', values: genders },
         { label:'fecha I', name: 'dateI', type: 'date', required: true, info: 'Fecha inicial', maxDate: 'dateF', minDate: new Date() },
         { label:'fecha F', name: 'dateF', type: 'date', required: true, info: 'Fecha final', maxDate: moment(new Date(), "dd/MM/yyyy").add(1, 'years'), minDate: 'dateI' },
-        { label:'clave', name: 'pass', type: 'password', required: true, info: 'minimo 8 caracteres' }
+        { label:'clave', name: 'pass', type: 'password', required: true, info: 'minimo 8 caracteres', validator: ['password'] }
     ];
 
     const handleSubmit = (event, state) => {

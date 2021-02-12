@@ -2,7 +2,7 @@ import React, {Fragment, useState} from 'react';
 import {
     Button, Grid, TextField, FormHelperText, RadioGroup,
     FormControlLabel, Checkbox, MenuItem, Box, FormControl, FormLabel,
-    Radio
+    Radio, InputAdornment, IconButton, InputLabel, Input
 } from "@material-ui/core";
 import {
     MuiPickersUtilsProvider,
@@ -14,8 +14,9 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import commonValidators from "../../../utils/commonValidators";
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         flexGrow: 1,
     }
@@ -24,8 +25,7 @@ const useStyles = makeStyles((theme) => ({
 const typeText = [
     'text',
     'email',
-    'number',
-    'password'
+    'number'
 ]
 
 const defaultSize = {
@@ -38,6 +38,7 @@ function FormScreen(props) {
 
     let jsonState = {};
     let errors = {};
+    let passwords = {};
     props.entity.forEach( elem => {
         if(typeText.indexOf(elem.type) >= 0)
             jsonState[elem.name] = '';
@@ -49,10 +50,13 @@ function FormScreen(props) {
             jsonState[elem.name] = '';
 
         errors[elem.name] = false;
+        if(elem.type === 'password')
+            passwords[elem.name] = false;
     });
 
     const [state, setState] = useState(jsonState);
     const [errorState, setErrorState] = useState(errors);
+    const [passwordView, showPassword] = useState(passwords);
     const classes = useStyles();
 
     const switchValidate = (validators, validations, name, value) => {
@@ -68,6 +72,10 @@ function FormScreen(props) {
                     break;
                 case 'number':
                     validators[name] = !commonValidators.numberValidate(value);
+                    setErrorState(validators);
+                    break;
+                case 'password' :
+                    validators[name] = !commonValidators.passwordValidate(value);
                     setErrorState(validators);
                     break;
                 default:
@@ -97,7 +105,14 @@ function FormScreen(props) {
 
     const handleSubmit = (event, state) => {
         event.preventDefault();
+        console.log(state);
         alert("interno");
+    }
+
+    const handleShowPassword = (name) => {
+        let show = {...passwordView};
+        show[name] = !show[name];
+        showPassword(show);
     }
 
     return (
@@ -139,12 +154,39 @@ function FormScreen(props) {
                                                    inputProps={{
                                                        maxLength: 50,
                                                    }}
-                                                   aria-describedby={element.name + "helper-text" + index}/>
+                                                   aria-describedby={element.name + "helper-text" + index}
+                                        />
                                         <FormHelperText id={element.name + "helper-text" + index}>
                                             {element.info}
                                         </FormHelperText>
                                     </Fragment>
                                 }
+
+                                {
+                                    element.type === 'password' &&
+                                    <FormControl>
+                                        <InputLabel htmlFor={element.name + "-password"}>{element.label}</InputLabel>
+                                        <Input
+                                            id={element.name + "-password"}
+                                            error={errorState[element.name]}
+                                            name={element.name}
+                                            type={passwordView[element.name] ? 'text' : 'password'}
+                                            value={state[element.name]}
+                                            onChange={handleChange}
+                                            endAdornment={
+                                                <InputAdornment position="end">
+                                                    <IconButton
+                                                        aria-label="toggle password visibility"
+                                                        onClick={() => handleShowPassword(element.name)}
+                                                    >
+                                                        {passwordView[element.name] ? <Visibility /> : <VisibilityOff />}
+                                                    </IconButton>
+                                                </InputAdornment>
+                                            }
+                                        />
+                                    </FormControl>
+                                }
+
                                 {
                                     element.type === 'checkbox' &&
                                     <FormControlLabel
@@ -256,6 +298,7 @@ function FormScreen(props) {
                                         </RadioGroup>
                                     </FormControl>
                                 }
+
                             </Grid>
                         ))
                     }
