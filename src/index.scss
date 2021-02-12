@@ -12,18 +12,28 @@ body {
   height: 100%;
 }
 
-
 .title {
   font-size: $size-title;
   color: $color-primary-blue;
+  font-weight: $font-roboto-bold;
+}
+
+%btn {
+  text-align: center;
+  line-height: 24px;
+  letter-spacing: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .btn-eco-primary {
-
+  @extend %btn;
+  background-color: $color-primary-blue;
 }
 
 .btn-eco-secondary {
-  background-color: $color-secondary-gray;
+  @extend %btn;
+  background-color: $color-secondary-gray !important;
+  border: solid 1px $color-primary-blue !important;
 }
 
 .ml-1 {

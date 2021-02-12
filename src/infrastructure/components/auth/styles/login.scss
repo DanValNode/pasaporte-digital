@@ -15,7 +15,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    left: 41.666666%;
+    left: 33.266666%;
     background-color: rgba(14, 12, 90, 0.63);
     @media (max-width: 959px) {
       left: 49.988888%;
@@ -53,4 +53,16 @@
 }
 
 .submit {
+}
+
+.copyright {
+  font-family: $font-roboto-light;
+  font-size: $size-subtext;
+  color: $color-primary-blue;
+  span:first-child {
+    margin-left: 10px;
+  }
+  span {
+    width: 100%;
+  }
 }

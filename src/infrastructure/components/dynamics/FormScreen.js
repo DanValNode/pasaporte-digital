@@ -126,7 +126,7 @@ function FormScreen(props) {
                     alignItems="center"
                 >
                     {props.icon}
-                    <h2 className="title-eco ml-1">{props.title}</h2>
+                    <h2 className="title ml-1">{props.title}</h2>
                 </Grid>
             }
 
