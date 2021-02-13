@@ -11,7 +11,6 @@ const AppRouter = () => {
         <Router>
             <Switch>
                 <Route exact path="/" component={LoginScreen} />
-                <Route exact path="/home" component={Home} />
 
                 <Route path="/" render={ () => <Auth> <DashboardRoutes /> </Auth>} />
             </Switch>

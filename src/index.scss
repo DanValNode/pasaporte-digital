@@ -18,6 +18,16 @@ body {
   font-weight: $font-roboto-bold;
 }
 
+.subtitle {
+  font-size: $size-subtitle;
+  font-weight: bold;
+  color: $color-primary-blue;
+}
+
+.icon-title {
+  font-size: $size-icon-title;  
+}
+
 %btn {
   text-align: center;
   line-height: 24px;
@@ -76,8 +86,3 @@ body {
 .mt-5 {
   margin-top: 5.5rem !important;
 }
-
-.icon-title {
-  font-size: 25px;
-}
-
